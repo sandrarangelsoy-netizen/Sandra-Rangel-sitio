@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 200" role="img" aria-labelledby="lockTitleD">
+  <title id="lockTitleD">Sandra Rangel — versión invertida</title>
+  <rect x="0" y="0" width="900" height="200" fill="#121212"/>
+  <g transform="translate(20,10)">
+    <path d="M100 8 L192 168 A14 14 0 0 1 180 188 L20 188 A14 14 0 0 1 8 168 Z" fill="#FFFFFF"/>
+    <g clip-path="url(#c2)">
+      <clipPath id="c2"><path d="M100 8 L192 168 A14 14 0 0 1 180 188 L20 188 A14 14 0 0 1 8 168 Z"/></clipPath>
+      <rect x="86" y="70" width="20" height="62" rx="8" fill="#121212"/>
+      <circle cx="96" cy="152" r="13" fill="#121212"/>
+      <path d="M104 62 C120 48 140 46 158 54 C150 64 150 78 158 88 C140 96 120 94 104 80 Z" fill="#C9A227"/>
+      <rect x="98" y="76" width="10" height="20" rx="3" fill="#C9A227"/>
+      <circle cx="96" cy="152" r="8" fill="#C9A227"/>
+    </g>
+  </g>
+  <text x="250" y="112" font-family="Fraunces, Georgia, serif" font-weight="600" font-size="86" fill="#FFFFFF">Sandra Rangel</text>
+  <text x="252" y="160" font-family="'Work Sans', Arial, sans-serif" font-weight="700" font-size="26" letter-spacing="1.5" fill="#C9A227">MARKETING SOCIAL PARA LA REDUCCIÓN DEL RIESGO</text>
+</svg>
