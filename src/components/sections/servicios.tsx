@@ -29,7 +29,7 @@ export function Servicios() {
   return (
     <section
       id="servicios"
-      className="mx-auto max-w-[1280px] px-[clamp(20px,4vw,48px)] py-[clamp(80px,12vh,140px)]"
+      className="mx-auto max-w-[1280px] px-[clamp(20px,4vw,48px)] py-16 md:py-[clamp(80px,12vh,140px)]"
     >
       <div className="mb-[clamp(40px,5vw,64px)] flex flex-wrap items-end justify-between gap-8">
         <Reveal>
@@ -49,7 +49,7 @@ export function Servicios() {
         {services.map((s, i) => (
           <Reveal key={s.title} delay={i * 0.1}>
             <article className="group flex flex-col gap-5">
-              <div className="relative aspect-[4/3.4] overflow-hidden rounded-[20px] bg-[#E7E0D3]">
+              <div className="relative aspect-[16/11] sm:aspect-[4/3.4] overflow-hidden rounded-[20px] bg-[#E7E0D3]">
                 <Image
                   src={s.img}
                   alt={s.title}

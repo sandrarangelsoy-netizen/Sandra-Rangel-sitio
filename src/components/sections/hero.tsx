@@ -1,7 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { RotatingWord } from "@/components/rotating-word";
 
@@ -14,36 +17,74 @@ const navLinks = [
 ];
 
 export function Hero() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <>
-      <nav className="mx-auto flex max-w-[1280px] flex-wrap items-center justify-between gap-6 px-[clamp(20px,4vw,48px)] py-6">
-        <a href="/" className="block">
-          <Image
-            src="/logo/sandra-rangel-horizontal-color.svg"
-            alt="Sandra Rangel"
-            width={99}
-            height={40}
-            className="block h-10 w-auto"
-            priority
-          />
-        </a>
-        <div className="flex flex-wrap items-center gap-x-[clamp(18px,2.4vw,34px)] gap-y-3 text-[15px] text-marino/75">
-          {navLinks.map((l) => (
-            <a key={l.href} href={l.href} className="transition-colors hover:text-naranja">
-              {l.label}
+      <nav className="mx-auto max-w-[1280px] px-[clamp(20px,4vw,48px)] py-5 lg:py-6">
+        <div className="flex items-center justify-between gap-6">
+          <Link href="/" className="block">
+            <Image
+              src="/logo/sandra-rangel-horizontal-color.svg"
+              alt="Sandra Rangel"
+              width={99}
+              height={40}
+              className="block h-10 w-auto"
+              priority
+            />
+          </Link>
+
+          <div className="hidden items-center gap-x-[clamp(18px,2.4vw,34px)] text-[15px] text-marino/75 lg:flex">
+            {navLinks.map((l) => (
+              <a key={l.href} href={l.href} className="transition-colors hover:text-naranja">
+                {l.label}
+              </a>
+            ))}
+            <a
+              href="#contacto"
+              className="rounded-full bg-marino px-5 py-3 text-sm font-semibold text-crema transition-colors hover:bg-naranja hover:text-marino"
+            >
+              Agenda un diagnóstico
             </a>
-          ))}
-          <a
-            href="#contacto"
-            className="rounded-full bg-marino px-5 py-3 text-sm font-semibold text-crema transition-colors hover:bg-naranja hover:text-marino"
+          </div>
+
+          <button
+            type="button"
+            onClick={() => setMenuOpen((v) => !v)}
+            className="flex h-11 w-11 items-center justify-center rounded-full text-marino lg:hidden"
+            aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={menuOpen}
           >
-            Agenda un diagnóstico
-          </a>
+            {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
+
+        {menuOpen && (
+          <div className="mt-4 flex flex-col border-t border-marino/15 pt-2 lg:hidden">
+            {navLinks.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setMenuOpen(false)}
+                className="border-b border-marino/10 py-3.5 text-lg font-semibold"
+              >
+                {l.label}
+              </a>
+            ))}
+            <a
+              href="#contacto"
+              onClick={() => setMenuOpen(false)}
+              className="mt-5 rounded-full bg-naranja px-6 py-4 text-center text-base font-bold text-marino"
+            >
+              Agenda un diagnóstico
+            </a>
+          </div>
+        )}
       </nav>
 
-      <header className="mx-auto grid max-w-[1280px] grid-cols-[repeat(auto-fit,minmax(min(100%,360px),1fr))] items-end gap-[clamp(32px,4vw,72px)] px-[clamp(20px,4vw,48px)]">
-        <div className="min-w-0 pb-[clamp(40px,7vh,80px)] pt-[clamp(32px,6vh,72px)]">
+      <header className="mx-auto grid max-w-[1280px] grid-cols-1 items-end gap-x-[clamp(32px,4vw,72px)] gap-y-10 px-[clamp(20px,4vw,48px)] lg:grid-cols-2">
+        <div className="contents lg:block lg:min-w-0 lg:pb-[clamp(40px,7vh,80px)] lg:pt-[clamp(32px,6vh,72px)]">
+          <div className="order-1 pt-2 lg:pt-0">
           <Reveal>
             <div className="mb-7 flex flex-wrap items-center gap-2.5 text-[13px] text-marino/60">
               <span>Marketing social</span>
@@ -83,8 +124,9 @@ export function Hero() {
               </a>
             </div>
           </Reveal>
+          </div>
 
-          <div className="mt-[clamp(40px,6vh,64px)] grid max-w-[520px] grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] gap-4">
+          <div className="order-3 grid max-w-[520px] lg:mt-[clamp(40px,6vh,64px)] grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] gap-4">
             <Reveal>
               <figure className="relative m-0 aspect-[4/3] overflow-hidden rounded-[18px] bg-[#E7E0D3]">
                 <Image
@@ -114,7 +156,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative flex min-h-[clamp(480px,82vh,800px)] items-end justify-center self-stretch">
+        <div className="relative order-2 flex items-end justify-center self-stretch lg:min-h-[clamp(480px,82vh,800px)]">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
