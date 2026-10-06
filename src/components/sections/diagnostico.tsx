@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, CheckCircle2, ClipboardCheck, Mail } from "lucide-react";
 import { Reveal } from "@/components/reveal";
+import { SectionLabel } from "@/components/section-label";
 
 type Answers = {
   tipo: string;
@@ -127,10 +128,9 @@ export function Diagnostico() {
     <section id="diagnostico" className="bg-marino py-20 text-crema md:py-28">
       <div className="mx-auto w-full max-w-4xl px-6 md:px-12">
         <Reveal className="mx-auto mb-12 max-w-2xl text-center">
-          <span className="mb-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-naranja">
-            <span className="h-px w-6 bg-naranja" />
-            Herramienta gratuita
-          </span>
+          <div className="flex justify-center">
+            <SectionLabel number="05" label="DIAGNÓSTICO" variant="light" />
+          </div>
           <h2 className="font-display text-3xl font-extrabold text-crema sm:text-4xl">
             Diagnóstico Express de Cumplimiento
           </h2>

@@ -1,30 +1,27 @@
-import { FileCheck2, PartyPopper, Megaphone, ArrowRight } from "lucide-react";
+import { SectionLabel } from "@/components/section-label";
 import { Reveal } from "@/components/reveal";
 
 const services = [
   {
-    icon: FileCheck2,
-    tag: "Decreto 2157 de 2017",
-    title: "Implementación integral del PGRDEPP",
+    num: "01",
+    title: "Campañas de marketing social",
     description:
-      "Formulación del Plan de Gestión del Riesgo de Desastres de Entidades Públicas y Privadas, incluyendo el componente de comunicación interna y comunitaria que exige la norma (Art. 42, Ley 1523 de 2012).",
-    audience: "Directores de HSEQ, sostenibilidad y gestión de riesgo corporativo",
+      "Estrategia, mensajes y piezas para que las personas adopten conductas de autoprotección: rutas de evacuación, kits, simulacros y alertas tempranas.",
+    tags: ["Estrategia", "Creatividad", "Medición"],
   },
   {
-    icon: PartyPopper,
-    tag: "PEC · Eventos masivos",
-    title: "Gestión social del riesgo en aglomeraciones",
+    num: "02",
+    title: "Gestión del riesgo de desastres",
     description:
-      "Asesoría técnica para la radicación y aprobación del Plan de Emergencia y Contingencia ante las autoridades locales, más el diseño de la campaña de comunicación con asistentes antes, durante y después del evento.",
-    audience: "Organizadores de eventos, productoras y promotores culturales",
+      "Comunicación del riesgo para entidades públicas y comunidades: del conocimiento del riesgo a su reducción y al manejo de la emergencia.",
+    tags: ["Comunidades", "Entidades", "Formación"],
   },
   {
-    icon: Megaphone,
-    tag: "CCSC",
-    title: "Marketing social y cambio de comportamiento",
+    num: "03",
+    title: "Consultoría en cumplimiento",
     description:
-      "Campañas institucionales preventivas que traducen el conocimiento técnico del riesgo en mensajes que la comunidad adopta, orientadas a reducir vulnerabilidades socioambientales reales.",
-    audience: "Alcaldías, gobernaciones y secretarías de gestión del riesgo",
+      "Acompaño a empresas obligadas por la normativa colombiana a formular e implementar su plan de gestión del riesgo, y a comunicarlo de forma que se cumpla de verdad.",
+    tags: ["Ley 1523 de 2012", "Decreto 2157 de 2017"],
   },
 ];
 
@@ -32,44 +29,45 @@ export function Services() {
   return (
     <section id="servicios" className="bg-white py-20 md:py-28">
       <div className="mx-auto w-full max-w-7xl px-6 md:px-12">
-        <Reveal className="mx-auto mb-14 max-w-2xl text-center">
-          <span className="mb-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-naranja">
-            <span className="h-px w-6 bg-naranja" />
-            Qué hago
-          </span>
-          <h2 className="font-display text-3xl font-extrabold text-marino sm:text-4xl">
-            Tres frentes de intervención técnica
-          </h2>
-          <p className="mt-4 text-marino/65">
-            Ingeniería del riesgo y marketing social trabajando juntos, no en paralelo.
-          </p>
-        </Reveal>
+        <div className="grid gap-10 md:grid-cols-[1fr_0.8fr] md:gap-16">
+          <Reveal>
+            <SectionLabel number="02" label="SERVICIOS" />
+            <h2 className="font-display text-3xl font-extrabold leading-tight text-marino sm:text-4xl">
+              Tres frentes,
+              <br />
+              <em className="italic text-marino/50">un mismo trazo.</em>
+            </h2>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p className="text-marino/60 md:pt-14">
+              La norma exige un plan. La comunidad necesita entenderlo. Mi trabajo es que
+              ambas cosas ocurran a la vez.
+            </p>
+          </Reveal>
+        </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="mt-14 divide-y divide-marino/10 border-t border-marino/10">
           {services.map((s, i) => (
-            <Reveal key={s.title} delay={i * 0.1}>
-              <article className="group h-full rounded-2xl border border-marino/10 bg-crema/60 p-8 transition-all hover:-translate-y-1 hover:border-naranja/40 hover:shadow-xl hover:shadow-marino/5">
-                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-marino text-naranja">
-                  <s.icon className="h-6 w-6" />
-                </div>
-                <span className="text-[11px] font-bold uppercase tracking-[0.12em] text-naranja">
-                  {s.tag}
-                </span>
-                <h3 className="mb-3 mt-2 font-display text-xl font-extrabold text-marino">
+            <Reveal key={s.title} delay={i * 0.08}>
+              <div className="grid grid-cols-1 gap-4 py-9 md:grid-cols-[80px_1.1fr_1fr] md:items-center md:gap-8">
+                <span className="font-display text-sm font-bold text-naranja">{s.num}</span>
+                <h3 className="font-display text-xl font-extrabold text-marino sm:text-2xl">
                   {s.title}
                 </h3>
-                <p className="mb-5 text-sm leading-relaxed text-marino/65">{s.description}</p>
-                <p className="mb-5 text-xs font-semibold text-marino/45">
-                  Para: {s.audience}
-                </p>
-                <a
-                  href="#contacto"
-                  className="inline-flex items-center gap-1.5 text-sm font-bold text-marino transition-colors group-hover:text-naranja"
-                >
-                  Hablemos de tu caso
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </a>
-              </article>
+                <div>
+                  <p className="text-sm leading-relaxed text-marino/60">{s.description}</p>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {s.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full border border-marino/15 px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-marino/55"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </Reveal>
           ))}
         </div>

@@ -1,76 +1,77 @@
 import Image from "next/image";
+import { SectionLabel } from "@/components/section-label";
 import { Reveal } from "@/components/reveal";
-
-const credentials = [
-  {
-    title: "Mercadeo",
-    detail: "Universidad Libre, sede Cartagena",
-  },
-  {
-    title: "Reconocimiento profesional",
-    detail: "Egresada destacada, categoría Servidor Público — Unilibre, 2025",
-  },
-  {
-    title: "Gestión del riesgo",
-    detail: "Ley 1523 de 2012 y Decreto 2157 de 2017",
-  },
-  {
-    title: "Red institucional",
-    detail: "Plataforma Nacional de Gestión del Riesgo de Desastres",
-  },
-];
+import { IsotipoMark } from "@/components/isotipo-mark";
 
 export function About() {
   return (
-    <section id="sobre-mi" className="bg-crema py-20 md:py-28">
-      <div className="mx-auto grid w-full max-w-7xl items-center gap-14 px-6 md:grid-cols-[0.85fr_1.15fr] md:px-12">
+    <section id="quien-soy" className="bg-crema py-20 md:py-28">
+      <div className="mx-auto grid w-full max-w-7xl items-center gap-14 px-6 md:grid-cols-[0.95fr_1.05fr] md:px-12">
         <Reveal>
-          <div className="relative mx-auto aspect-[4/5] max-w-sm overflow-hidden rounded-[2rem] bg-marino shadow-xl">
-            <Image
-              src="/img/sandra-about.webp"
-              alt="Sandra Rangel en su oficina"
-              fill
-              sizes="(max-width: 768px) 320px, 420px"
-              className="object-cover"
-            />
+          <div className="relative mx-auto grid max-w-md grid-cols-2 gap-4">
+            <div className="relative col-span-2 aspect-[4/3] overflow-hidden rounded-2xl">
+              <Image
+                src="/img/sandra-about.webp"
+                alt="Sandra Rangel en su oficina"
+                fill
+                sizes="(max-width: 768px) 320px, 380px"
+                className="object-cover"
+              />
+            </div>
+            <div className="relative aspect-square overflow-hidden rounded-2xl">
+              <Image
+                src="/img/sandra-selfie.webp"
+                alt="Sandra Rangel"
+                fill
+                sizes="180px"
+                className="object-cover"
+              />
+            </div>
+            <div className="flex aspect-square items-center justify-center rounded-2xl bg-naranja">
+              <IsotipoMark className="h-14 w-14 text-marino" />
+            </div>
           </div>
         </Reveal>
 
         <Reveal delay={0.1}>
-          <span className="mb-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-naranja">
-            <span className="h-px w-6 bg-naranja" />
-            Sobre mí
-          </span>
-          <h2 className="font-display text-3xl font-extrabold text-marino sm:text-4xl">
-            No soy auditora del riesgo. Soy arquitecta de la cultura que lo previene.
+          <SectionLabel number="04" label="QUIÉN SOY" />
+          <h2 className="font-display text-3xl font-extrabold leading-tight text-marino sm:text-4xl">
+            Las grandes marcas
+            <br />
+            también tienen historias.
+            <br />
+            <em className="italic text-naranja">Las comunidades, también.</em>
           </h2>
-          <p className="mt-5 text-marino/70">
-            Soy Sandra Rangel, mercadóloga egresada de la Universidad Libre, sede Cartagena,
-            especializada en llevar el marco legal colombiano de gestión del riesgo de
-            desastres —Ley 1523 de 2012 y Decreto 2157 de 2017— del papel a la práctica. Mi
-            trabajo conecta la rigurosidad técnica de la ingeniería del riesgo con las
-            herramientas del marketing social: investigación, segmentación y diseño de
-            mensajes que modifican comportamientos reales.
+
+          <p className="mt-6 text-marino/70">
+            Soy Sandra Milena Rangel Muñoz, mercadóloga egresada de la Universidad Libre de
+            Cartagena. Vinculo el marketing con mi formación técnica en gestión del riesgo de
+            desastres para que, a través de la responsabilidad social empresarial, las
+            empresas y las comunidades adopten lo que exige la norma.
           </p>
           <p className="mt-4 text-marino/70">
-            He participado en espacios de la Plataforma Nacional de Gestión del Riesgo de
-            Desastres junto a autoridades civiles y militares, y creo firmemente en los
-            principios de autoconservación y solidaridad social que establece la ley: proteger
-            la vida es una responsabilidad compartida, no solo del Estado.
+            La Ley 1523 de 2012 dice que la gestión del riesgo es responsabilidad de todos; el
+            Decreto 2157 de 2017 exige que las entidades apliquen medidas de intervención
+            prospectiva y correctiva. Esas medidas solo funcionan si la gente las entiende y
+            las practica — ahí es donde entro yo.
           </p>
 
-          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {credentials.map((c) => (
-              <div
-                key={c.title}
-                className="rounded-xl border-l-4 border-naranja bg-white px-5 py-4"
-              >
-                <div className="font-display text-base font-extrabold text-marino">
-                  {c.title}
-                </div>
-                <div className="mt-0.5 text-xs leading-snug text-marino/55">{c.detail}</div>
-              </div>
-            ))}
+          <div className="mt-7 inline-flex items-center gap-3 rounded-full border border-marino/15 bg-white py-2 pl-2 pr-5">
+            <span className="rounded-full bg-naranja px-3 py-1 text-xs font-extrabold text-white">
+              12 años
+            </span>
+            <span className="text-sm font-semibold text-marino/70">
+              Coordinadora de reducción del riesgo
+            </span>
+          </div>
+
+          <div className="mt-8">
+            <a
+              href="#contacto"
+              className="border-b border-naranja pb-0.5 text-sm font-bold text-naranja transition-colors hover:border-marino hover:text-marino"
+            >
+              Trabajemos juntas →
+            </a>
           </div>
         </Reveal>
       </div>
