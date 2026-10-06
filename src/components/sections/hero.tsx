@@ -84,7 +84,7 @@ export function Hero() {
 
       <header className="mx-auto grid max-w-[1280px] grid-cols-1 items-end gap-x-[clamp(32px,4vw,72px)] gap-y-10 px-[clamp(20px,4vw,48px)] lg:grid-cols-2">
         <div className="contents lg:block lg:min-w-0 lg:pb-[clamp(40px,7vh,80px)] lg:pt-[clamp(32px,6vh,72px)]">
-          <div className="order-1 pt-2 lg:pt-0">
+          <div className="order-2 pt-2 lg:order-none lg:pt-0">
           <Reveal>
             <div className="mb-7 flex flex-wrap items-center gap-2.5 text-[13px] text-marino/60">
               <span>Marketing social</span>
@@ -156,22 +156,28 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative order-2 flex items-end justify-center self-stretch lg:min-h-[clamp(480px,82vh,800px)]">
+        <div className="relative order-1 flex items-end justify-center self-stretch pt-2 lg:order-none lg:min-h-[clamp(480px,82vh,800px)] lg:pt-0">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.3, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="relative aspect-[3/3.9] w-[min(92%,500px)] overflow-hidden rounded-t-[260px] bg-[#E7E0D3]"
+            className="relative aspect-[3/3.9] w-[min(88%,500px)] lg:w-[min(92%,500px)]"
           >
-            <Image
-              src="/img/retrato-escritorio.webp"
-              alt="Sandra Rangel"
-              fill
-              priority
-              sizes="500px"
-              className="object-cover"
-              style={{ objectPosition: "35% 15%" }}
+            <div
+              aria-hidden
+              className="absolute inset-0 -translate-x-3 translate-y-3 rounded-t-[260px] bg-naranja lg:hidden"
             />
+            <div className="absolute inset-0 overflow-hidden rounded-t-[260px] bg-[#E7E0D3]">
+              <Image
+                src="/img/retrato-escritorio.webp"
+                alt="Sandra Rangel"
+                fill
+                priority
+                sizes="500px"
+                className="object-cover"
+                style={{ objectPosition: "35% 15%" }}
+              />
+            </div>
           </motion.div>
         </div>
       </header>
