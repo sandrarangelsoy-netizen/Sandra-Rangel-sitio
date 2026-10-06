@@ -1,25 +1,21 @@
 import { Hero } from "@/components/sections/hero";
 import { Enfoque } from "@/components/sections/enfoque";
-import { Services } from "@/components/sections/services";
-import { Trayectoria } from "@/components/sections/trayectoria";
-import { About } from "@/components/sections/about";
-import { Diagnostico } from "@/components/sections/diagnostico";
-import { Contact } from "@/components/sections/contact";
-import { SiteFooter } from "@/components/site-footer";
+import { Servicios } from "@/components/sections/servicios";
+import { SobreMi } from "@/components/sections/sobre-mi";
+import { Reconocimientos } from "@/components/sections/reconocimientos";
+import { Contacto } from "@/components/sections/contacto";
 
 export default function Home() {
   return (
-    <div className="flex flex-1 flex-col">
-      <main className="flex-1">
-        <Hero />
+    <div className="w-full overflow-x-hidden">
+      <Hero />
+      <main>
         <Enfoque />
-        <Services />
-        <Trayectoria />
-        <About />
-        <Diagnostico />
-        <Contact />
+        <Servicios />
+        <SobreMi />
+        <Reconocimientos />
       </main>
-      <SiteFooter />
+      <Contacto />
     </div>
   );
 }
