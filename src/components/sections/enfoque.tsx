@@ -53,10 +53,10 @@ export function Enfoque() {
           </Reveal>
         </div>
 
-        <div className="flex flex-col">
+        <div className="flex flex-col gap-3 lg:gap-0">
           {proof.map((p, i) => (
             <Reveal key={p.title} delay={i * 0.08}>
-              <div className="grid grid-cols-[clamp(120px,12vw,168px)_minmax(0,1fr)] items-center gap-7 border-b border-marino/15 py-[22px]">
+              <div className="grid grid-cols-[104px_minmax(0,1fr)] items-center gap-4 rounded-3xl bg-crema p-4 lg:grid-cols-[clamp(120px,12vw,168px)_minmax(0,1fr)] lg:gap-7 lg:rounded-none lg:border-b lg:border-marino/15 lg:bg-transparent lg:px-0 lg:py-[22px]">
                 <div className="relative aspect-square overflow-hidden rounded-2xl bg-[#E7E0D3]">
                   <Image
                     src={p.img}

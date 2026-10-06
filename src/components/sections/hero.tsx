@@ -82,7 +82,7 @@ export function Hero() {
         )}
       </nav>
 
-      <header className="mx-auto grid max-w-[1280px] grid-cols-1 items-end gap-x-[clamp(32px,4vw,72px)] gap-y-10 px-[clamp(20px,4vw,48px)] lg:grid-cols-2">
+      <header className="mx-auto grid max-w-[1280px] grid-cols-1 items-end gap-x-[clamp(32px,4vw,72px)] gap-y-10 px-[clamp(20px,4vw,48px)] lg:grid-cols-2 pb-12 lg:pb-0">
         <div className="contents lg:block lg:min-w-0 lg:pb-[clamp(40px,7vh,80px)] lg:pt-[clamp(32px,6vh,72px)]">
           <div className="order-2 pt-2 lg:order-none lg:pt-0">
           <Reveal>
@@ -126,9 +126,9 @@ export function Hero() {
           </Reveal>
           </div>
 
-          <div className="order-3 grid max-w-[520px] lg:mt-[clamp(40px,6vh,64px)] grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] gap-4">
-            <Reveal>
-              <figure className="relative m-0 aspect-[4/3] overflow-hidden rounded-[18px] bg-[#E7E0D3]">
+          <div className="order-3 grid max-w-[520px] grid-cols-2 gap-3 lg:mt-[clamp(40px,6vh,64px)] lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-4">
+            <Reveal className="h-[200px] lg:h-auto">
+              <figure className="relative m-0 h-full overflow-hidden rounded-[18px] bg-[#E7E0D3] lg:aspect-[4/3] lg:h-auto">
                 <Image
                   src="/img/evento-plataforma.webp"
                   alt="Plataforma Nacional para la Gestión del Riesgo"
@@ -142,7 +142,7 @@ export function Hero() {
                 </figcaption>
               </figure>
             </Reveal>
-            <Reveal delay={0.1} className="h-full">
+            <Reveal delay={0.1} className="h-[200px] lg:h-full">
               <div className="flex h-full flex-col justify-between gap-3 rounded-[18px] bg-marino p-[18px] text-crema">
                 <span className="text-xs font-semibold uppercase tracking-[0.14em] text-naranja">
                   2025

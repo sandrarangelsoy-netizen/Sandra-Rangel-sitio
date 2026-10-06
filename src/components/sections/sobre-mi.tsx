@@ -3,7 +3,7 @@ import { Reveal } from "@/components/reveal";
 
 const photos = [
   { src: "/img/selfie-oficina.webp", alt: "Sandra Rangel trabajando", pos: "40% 30%", offset: "" },
-  { src: "/img/retrato-taza.webp", alt: "Sandra Rangel en su oficina", pos: "50% 25%", offset: "mt-8 md:mt-14" },
+  { src: "/img/retrato-taza.webp", alt: "Sandra Rangel en su oficina", pos: "50% 25%", offset: "md:mt-14" },
   { src: "/img/corferias.webp", alt: "Sandra Rangel en Corferias", pos: "50% 20%", offset: "" },
 ];
 

@@ -39,8 +39,8 @@ export function Servicios() {
         </Reveal>
         <Reveal delay={0.08}>
           <p className="m-0 max-w-[40ch] text-pretty text-[17px] leading-relaxed text-marino/75">
-            La norma exige un plan. La comunidad necesita entenderlo. Trabajo para que ambas
-            cosas ocurran a la vez.
+            La norma exige un plan. La comunidad necesita entenderlo. Trabajo
+            para que ambas cosas ocurran a la vez.
           </p>
         </Reveal>
       </div>
@@ -48,7 +48,7 @@ export function Servicios() {
       <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))] gap-[clamp(20px,2.4vw,32px)]">
         {services.map((s, i) => (
           <Reveal key={s.title} delay={i * 0.1}>
-            <article className="group flex flex-col gap-5">
+            <article className="group flex h-full flex-col gap-4 rounded-[28px] bg-[#FBF8F3] p-3 lg:gap-5 lg:rounded-none lg:bg-transparent lg:p-0">
               <div className="relative aspect-[16/11] sm:aspect-[4/3.4] overflow-hidden rounded-[20px] bg-[#E7E0D3]">
                 <Image
                   src={s.img}
@@ -59,19 +59,23 @@ export function Servicios() {
                   style={{ objectPosition: s.pos }}
                 />
               </div>
-              <h3 className="m-0 text-[clamp(22px,2vw,28px)] font-bold leading-[1.15] tracking-[-0.015em]">
-                {s.title}
-              </h3>
-              <p className="m-0 text-pretty text-base leading-relaxed text-marino/80">{s.body}</p>
-              <div className="flex flex-wrap gap-2">
-                {s.tags.map((t) => (
-                  <span
-                    key={t}
-                    className="rounded-full border border-marino/25 px-3 py-1.5 text-[13px]"
-                  >
-                    {t}
-                  </span>
-                ))}
+              <div className="flex flex-col gap-4 px-3 pb-3 lg:gap-5 lg:p-0">
+                <h3 className="m-0 text-[clamp(22px,2vw,28px)] font-bold leading-[1.15] tracking-[-0.015em]">
+                  {s.title}
+                </h3>
+                <p className="m-0 text-pretty text-base leading-relaxed text-marino/80">
+                  {s.body}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {s.tags.map((t) => (
+                    <span
+                      key={t}
+                      className="rounded-full border border-marino/25 px-3 py-1.5 text-[13px]"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
               </div>
             </article>
           </Reveal>
