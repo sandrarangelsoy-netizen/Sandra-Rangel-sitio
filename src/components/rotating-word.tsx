@@ -8,7 +8,6 @@ export function RotatingWord() {
   const [active, setActive] = useState(0);
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     let interval: ReturnType<typeof setInterval>;
     const start = setTimeout(() => {
       setActive(1);
