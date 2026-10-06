@@ -4,6 +4,7 @@ import { Servicios } from "@/components/sections/servicios";
 import { SobreMi } from "@/components/sections/sobre-mi";
 import { Trayectoria } from "@/components/sections/trayectoria";
 import { Reconocimientos } from "@/components/sections/reconocimientos";
+import { WhatsAppButton } from "@/components/whatsapp-button";
 import { Contacto } from "@/components/sections/contacto";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
         <Reconocimientos />
       </main>
       <Contacto />
+      <WhatsAppButton />
     </div>
   );
 }
