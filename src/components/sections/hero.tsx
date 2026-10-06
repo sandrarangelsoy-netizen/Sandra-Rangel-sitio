@@ -17,7 +17,7 @@ export function Hero() {
   return (
     <>
       <nav className="mx-auto flex max-w-[1280px] flex-wrap items-center justify-between gap-6 px-[clamp(20px,4vw,48px)] py-6">
-        <a href="#" className="block">
+        <a href="/" className="block">
           <Image
             src="/logo/sandra-rangel-horizontal-color.svg"
             alt="Sandra Rangel"
