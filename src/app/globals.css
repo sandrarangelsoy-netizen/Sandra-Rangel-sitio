@@ -1,0 +1,128 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --radius: 0.75rem;
+
+  /* Marca Sandra Rangel — Manual de identidad 2026 */
+  --marino: #1f2a44;
+  --marino-700: #16203580;
+  --naranja: #e8622c;
+  --naranja-600: #cf4f1d;
+  --crema: #f4efe6;
+  --negro: #161616;
+
+  --background: var(--crema);
+  --foreground: var(--marino);
+
+  --card: #ffffff;
+  --card-foreground: var(--marino);
+
+  --popover: #ffffff;
+  --popover-foreground: var(--marino);
+
+  --primary: var(--naranja);
+  --primary-foreground: #ffffff;
+
+  --secondary: var(--marino);
+  --secondary-foreground: var(--crema);
+
+  --muted: #e9e2d3;
+  --muted-foreground: #5b6377;
+
+  --accent: var(--naranja);
+  --accent-foreground: #ffffff;
+
+  --destructive: #b3261e;
+  --destructive-foreground: #ffffff;
+
+  --border: #1f2a4420;
+  --input: #1f2a4426;
+  --ring: var(--naranja);
+}
+
+.dark {
+  --background: var(--marino);
+  --foreground: var(--crema);
+
+  --card: #26314d;
+  --card-foreground: var(--crema);
+
+  --popover: #26314d;
+  --popover-foreground: var(--crema);
+
+  --primary: var(--naranja);
+  --primary-foreground: #ffffff;
+
+  --secondary: var(--crema);
+  --secondary-foreground: var(--marino);
+
+  --muted: #2c3854;
+  --muted-foreground: #b7bdcd;
+
+  --accent: var(--naranja);
+  --accent-foreground: #ffffff;
+
+  --destructive: #e25c53;
+  --destructive-foreground: #ffffff;
+
+  --border: #f4efe61f;
+  --input: #f4efe626;
+  --ring: var(--naranja);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Colores de marca, utilizables directamente como bg-marino, text-naranja, etc. */
+  --color-marino: var(--marino);
+  --color-naranja: var(--naranja);
+  --color-naranja-600: var(--naranja-600);
+  --color-crema: var(--crema);
+  --color-negro: var(--negro);
+
+  --font-display: var(--font-archivo);
+  --font-sans: var(--font-archivo);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+}
